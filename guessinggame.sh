@@ -31,13 +31,17 @@ read response
 			read response
 		done
 	done
-	while [[ response =~ [a-z]+*[A-Z]+* ]]
-	do
-		echo "Invalid response. Please try again: "
-		read response
-	done
 
 	if [[ $response == $files_count ]]
 	then
 		echo "Congratulations!!! Your guess is correct. There are $files_count file(s) in this directory."
+	elif [[ $response =~ ^[a-zA-Z]+* ^[0-9] ]]
+	then
+		while [[ $response =~ ^[a-zA-Z]+* ^[0-9] ]]
+		do
+			echo "Invalid response. Please try again: "
+			read response
+		done
+	else
+		echo "Ooops, I don't understand you"
 	fi
