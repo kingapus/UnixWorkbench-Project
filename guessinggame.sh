@@ -31,7 +31,11 @@ read response
 			read response
 		done
 	done
-
+	while [[ response =~ [a-z]+*[A-Z]+* ]]
+	do
+		echo "Invalid response. Please try again: "
+		read response
+	done
 
 	if [[ $response == $files_count ]]
 	then
