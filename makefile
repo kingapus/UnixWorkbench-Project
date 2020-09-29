@@ -8,4 +8,4 @@ README.md: guessinggame.sh
 	date -r guessinggame.sh >> README.md 
 
 	echo "The number of lines of code contained in "guessinggame.sh" is: " >> README.md
-	echo $(wc -l)
+	wc -l guessinggame.sh >> README.md
