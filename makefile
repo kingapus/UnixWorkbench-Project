@@ -7,4 +7,5 @@ README.md: guessinggame.sh
 	echo "Make was run on: " >> README.md
 	date -r guessinggame.sh >> README.md 
 
-	echo "the number of lines of code contained in "guessinggame.sh" is: $(wc -l guessinggame.sh)" >> README.md
+	echo "The number of lines of code contained in "guessinggame.sh" is: " >> README.md
+	wc -l guessinggame.sh >> README.md
